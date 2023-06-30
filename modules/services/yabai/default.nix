@@ -78,7 +78,7 @@ in
       launchd.user.agents.yabai = {
         serviceConfig.ProgramArguments = [ "${cfg.package}/bin/yabai" ]
                                          ++ optionals (cfg.config != {} || cfg.extraConfig != "") [ "-c" configFile ];
-
+        serviceConfig.StandardOutPath = "/tmp/yabai.out";
         serviceConfig.KeepAlive = true;
         serviceConfig.RunAtLoad = true;
         serviceConfig.EnvironmentVariables = {
