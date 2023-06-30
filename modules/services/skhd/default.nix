@@ -39,6 +39,7 @@ in
         ++ optionals (cfg.skhdConfig != "") [ "-c" "/etc/skhdrc" ];
       serviceConfig.KeepAlive = true;
       serviceConfig.ProcessType = "Interactive";
+      serviceConfig.StandardOutPath = "/tmp/skhd.out";
     };
 
   };
